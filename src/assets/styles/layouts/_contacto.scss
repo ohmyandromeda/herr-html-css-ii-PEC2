@@ -1,0 +1,46 @@
+@use "../variables";
+
+.colabora-page {
+  background-color: variables.$background;
+  min-height: 100vh;
+  padding: 8rem 1rem;
+
+  .colabora-container {
+    max-width: 700px;
+    margin: 0 auto;
+
+    &:has(form) {
+      background: white;
+      padding: 3rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  .colabora-header {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    h2 {
+      color: variables.$primary;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+  }
+
+  :is(.form-label, .accordion-button) {
+    color: variables.$primary;
+    font-weight: bold;
+  }
+
+  .accordion-button:not(.collapsed) {
+    background-color: rgba(variables.$secondary, 0.1);
+    color: variables.$primary;
+    box-shadow: none;
+  }
+
+  .accordion-button:focus {
+    border-color: variables.$secondary;
+    box-shadow: 0 0 0 0.25rem rgba(variables.$secondary, 0.25);
+  }
+}

@@ -1,0 +1,125 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
+    <!-- do not remove this line! -->
+    <title>UOC Boilerplate</title>
+  </head>
+  <body>
+    <include src="./views/header.html"></include>
+    <main class="colabora-page">
+      <section class="colabora-container">
+        <header class="colabora-header">
+          <h2>Únete como colaborador</h2>
+          <p>
+            Si eres artesano o quieres ayudar en la organización, rellena el
+            formulario.
+          </p>
+        </header>
+
+        <form class="colabora-form mb-5">
+          <div class="mb-3">
+            <label for="name" class="form-label">Nombre completo</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Nombre y apellidos"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email de contacto</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="nombre@ejemplo.com"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="role" class="form-label"
+              >¿Cómo quieres colaborar?</label
+            >
+            <select class="form-select" id="role">
+              <option selected>Selecciona una opción</option>
+              <option value="1">Soy artesano (Taller en vivo)</option>
+              <option value="2">Voluntariado logística</option>
+              <option value="3">Patrocinio / Gastronomía</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label"
+              >Cuéntanos sobre tu propuesta</label
+            >
+            <textarea class="form-control" id="message" rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">
+            Enviar solicitud
+          </button>
+        </form>
+
+        <hr class="my-5" />
+
+        <section class="colabora-faq">
+          <h3 class="mb-4">Preguntas Frecuentes</h3>
+          <div class="accordion accordion-flush" id="faqAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faq1"
+                >
+                  ¿Hay que pagar por poner un stand?
+                </button>
+              </h2>
+              <div
+                id="faq1"
+                class="accordion-collapse collapse"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  No, la feria es gratuita para los artesanos locales
+                  seleccionados, bajo el compromiso de realizar una demostración
+                  en vivo.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faq2"
+                >
+                  ¿Qué incluye el espacio de colaborador?
+                </button>
+              </h2>
+              <div
+                id="faq2"
+                class="accordion-collapse collapse"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  Proporcionamos carpa, punto de luz y difusión en nuestras
+                  redes sociales y programa físico.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+    <include src="./views/footer.html"></include>
+    <script type="module" src="./assets/scripts/main.js"></script>
+    <!-- do not remove this line! -->
+  </body>
+</html>
