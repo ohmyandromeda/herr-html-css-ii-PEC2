@@ -1,0 +1,9 @@
+@use "variables" as vars;
+
+$theme-colors: (
+  "primary": vars.$primary,
+  "secondary": vars.$secondary,
+  "light": vars.$background,
+);
+
+@import "bootstrap/scss/bootstrap";

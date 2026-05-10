@@ -1,0 +1,98 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
+    <!-- do not remove this line! -->
+    <title>UOC Boilerplate</title>
+  </head>
+  <body>
+    <include src="./views/header.html"></include>
+    <main>
+      <section class="speakers-section">
+        <h2 class="speakers-section__title">Ponentes de las Jornadas</h2>
+
+        <div class="speakers-grid">
+          <article class="speaker-card">
+            <div class="speaker-card__image">
+              <img
+                src="./assets/images/tatsu-ceramica.jpeg"
+                alt="Tatsu Cerámica"
+              />
+            </div>
+            <div class="speaker-card__info">
+              <span class="speaker-card__tag">Rakú jewelry</span>
+              <h3 class="speaker-card__name">Tanya Sush</h3>
+              <p class="speaker-card__bio">
+                Especialista en Cerámica artesanal
+              </p>
+              <div class="speaker-card__social">
+                <a
+                  href="https://www.instagram.com/tatsu_ceramica/"
+                  class="btn btn-primary"
+                  target="_blank"
+                  rel="noopener"
+                  >Instagram</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-card__image">
+              <img src="./assets/images/bico.png" alt="BICO joyería" />
+            </div>
+            <div class="speaker-card__info">
+              <span class="speaker-card__tag">BICO joyería</span>
+              <h3 class="speaker-card__name">Ale e Isa</h3>
+              <p class="speaker-card__bio">
+                Emprendedoras de marca de joyería cerámica.
+              </p>
+              <div class="speaker-card__social">
+                <a
+                  href="https://www.instagram.com/bico_________/"
+                  class="btn btn-primary"
+                  target="_blank"
+                  rel="noopener"
+                  >Instagram</a
+                >
+                <a
+                  href="https://bicoshop.es/"
+                  class="btn btn-secondary"
+                  target="_blank"
+                  rel="noopener"
+                  >Web</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-card__image">
+              <img src="./assets/images/andromeda.jpeg" alt="Andromeda" />
+            </div>
+            <div class="speaker-card__info">
+              <span class="speaker-card__tag">Oh my andromeda</span>
+              <h3 class="speaker-card__name">Andrea Esteve</h3>
+              <p class="speaker-card__bio">Ilustradora y retratista</p>
+              <div class="speaker-card__social">
+                <a
+                  href="https://www.instagram.com/ohmyandromed.art/"
+                  class="btn btn-primary"
+                  target="_blank"
+                  rel="noopener"
+                  >Instagram</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <include src="./views/footer.html"></include>
+    <script type="module" src="./assets/scripts/main.js"></script>
+    <!-- do not remove this line! -->
+  </body>
+</html>
