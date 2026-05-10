@@ -3,6 +3,7 @@
 .speakers-section {
   padding: 4rem 2rem;
   background-color: variables.$background;
+  min-height: 100vh;
 
   &__title {
     margin-top: 50px;

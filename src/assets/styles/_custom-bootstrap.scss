@@ -4,6 +4,7 @@ $theme-colors: (
   "primary": vars.$primary,
   "secondary": vars.$secondary,
   "light": vars.$background,
+  "accent": vars.$title,
 );
 
 @import "bootstrap/scss/bootstrap";

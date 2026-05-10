@@ -1,0 +1,101 @@
+@use "../variables";
+
+@layer base, content;
+
+@layer base {
+  .article-page {
+    background-color: variables.$background;
+  }
+
+  img {
+    width: 50%;
+    height: auto;
+    justify-self: center;
+    display: block;
+    margin: 2rem;
+    border-radius: 4px;
+  }
+}
+
+@layer content {
+  .article-header {
+    position: relative;
+    min-height: 40vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    background-image:
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+      url("../images/altura-aereo.png");
+    background-size: cover;
+    background-position: center bottom;
+    background-attachment: fixed;
+
+    &__text {
+      max-width: 800px;
+    }
+  }
+
+  .article-content {
+    width: 75%;
+    justify-self: center;
+    align-self: center;
+    container-type: inline-size;
+    container-name: article-container;
+  }
+  :is(.article-title, h3) {
+    color: variables.$title !important;
+    text-transform: uppercase;
+    font-weight: 900 !important;
+  }
+
+  .article-sub {
+    color: variables.$background;
+  }
+
+  section:has(.article-image-wrap) {
+    margin-block: 4rem;
+  }
+
+  blockquote {
+    font-size: 1.4rem;
+    font-style: italic;
+    border-left: 5px solid variables.$secondary;
+    padding-left: 2rem;
+    margin: 3rem 0;
+    color: variables.$primary;
+
+    @container article-container (width > 600px) {
+      font-size: 1.8rem;
+    }
+  }
+
+  .article-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+
+    li {
+      padding: 0.8rem;
+      border-bottom: 1px solid rgba(variables.$secondary, 0.2);
+
+      :where(strong) {
+        color: variables.$secondary;
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  .article-figure {
+    margin: 2rem 0;
+    figcaption {
+      font-size: 0.85rem;
+      text-align: center;
+      margin-top: 0.5rem;
+      color: variables.$primary;
+      opacity: 0.7;
+    }
+  }
+}
