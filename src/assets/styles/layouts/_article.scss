@@ -1,6 +1,5 @@
 @use "../variables";
-
-@layer base, content;
+@layer base, content, components;
 
 @layer base {
   .article-page {
@@ -27,7 +26,7 @@
     justify-content: end;
     align-items: center;
     background-image:
-      linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+      linear-gradient(to bottom, rgb(0 0 0 / 30%), rgb(0 0 0 / 50%)),
       url("../images/altura-aereo.png");
     background-size: cover;
     background-position: center bottom;
@@ -40,11 +39,11 @@
 
   .article-content {
     width: 75%;
-    justify-self: center;
-    align-self: center;
+    place-self: center center;
     container-type: inline-size;
     container-name: article-container;
   }
+
   :is(.article-title, h3) {
     color: variables.$title !important;
     text-transform: uppercase;
@@ -90,12 +89,48 @@
 
   .article-figure {
     margin: 2rem 0;
+
     figcaption {
       font-size: 0.85rem;
       text-align: center;
       margin-top: 0.5rem;
       color: variables.$primary;
       opacity: 0.7;
+    }
+  }
+}
+
+@layer components {
+  .breadcrumb {
+    margin-top: 1.5rem;
+    padding: 0.5rem 0;
+    background-color: transparent;
+    font-size: 0.85rem;
+
+    &-item {
+      display: flex;
+      align-items: center;
+
+      a {
+        color: variables.$secondary !important;
+        text-decoration: none;
+        transition: color 0.2s ease;
+
+        &:hover {
+          color: variables.$primary;
+          text-decoration: underline;
+        }
+      }
+
+      &.active {
+        color: variables.$primary;
+        font-weight: bold;
+      }
+
+      & + .breadcrumb-item::before {
+        color: variables.$secondary;
+        content: var(--bs-breadcrumb-divider, "/");
+      }
     }
   }
 }

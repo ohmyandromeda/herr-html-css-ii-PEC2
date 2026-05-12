@@ -1,11 +1,35 @@
 @use "../variables";
 
-.speakers-section {
-  padding: 4rem 2rem;
-  background-color: variables.$background;
-  min-height: 100vh;
+@layer base, layout, components;
 
-  &__title {
+@layer base {
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .speakers-section {
+    padding: 4rem 2rem;
+    background-color: variables.$background;
+    min-height: 100vh;
+  }
+}
+
+@layer layout {
+  .speakers-grid {
+    //.row
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: flex-start;
+    container-type: inline-size;
+    container-name: grid-container;
+  }
+}
+
+@layer components {
+  .speakers-section__title {
     margin-top: 50px;
     font-size: 2.5rem;
     color: variables.$primary;
@@ -14,71 +38,71 @@
     font-weight: 900;
     display: inline-block;
   }
-}
 
-.speakers-grid {
-  //.row
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: flex-start;
-}
+  .speaker-card {
+    //.col
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 calc(33.333% - 1.35rem);
+    min-width: 280px;
+    background-color: rgba(variables.$secondary, 0.1);
+    transition: transform 0.3s ease;
 
-.speaker-card {
-  //.col
-  display: flex;
-  flex-direction: column;
-  flex: 0 1 calc(33.333% - 1.35rem);
-  min-width: 280px;
-  background-color: rgba(variables.$secondary, 0.1);
-  transition: transform 0.3s ease;
+    &:hover {
+      transform: translateY(-5px);
+    }
 
-  &__image {
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
-
-    img {
+    &__image {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: 300px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__info {
+      padding: 1.5rem;
+    }
+
+    &__tag {
+      font-size: 0.7rem;
+      font-weight: bold;
+      color: variables.$secondary;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    &__name {
+      font-size: 1.5rem;
+      color: variables.$primary;
+      margin: 0.5rem 0;
+    }
+
+    &__bio {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: variables.$primary;
+      opacity: 0.8;
     }
   }
+}
 
-  &__info {
-    padding: 1.5rem;
-  }
-
-  &__tag {
-    font-size: 0.7rem;
-    font-weight: bold;
-    color: variables.$secondary;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  &__name {
-    font-size: 1.5rem;
-    color: variables.$primary;
-    margin: 0.5rem 0;
-  }
-
-  &__bio {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    color: variables.$primary;
-    opacity: 0.8;
+@container grid-container (max-width: 992px) {
+  @layer components {
+    .speaker-card {
+      flex: 0 1 calc(50% - 1rem);
+    }
   }
 }
 
-@media (max-width: 992px) {
-  .speaker-card {
-    flex: 0 1 calc(50% - 1rem);
-  }
-}
-
-@media (max-width: 600px) {
-  .speaker-card {
-    flex: 1 1 100%;
+@container grid-container (max-width: 600px) {
+  @layer components {
+    .speaker-card {
+      flex: 1 1 100%;
+    }
   }
 }

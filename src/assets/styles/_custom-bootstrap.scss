@@ -7,4 +7,8 @@ $theme-colors: (
   "accent": vars.$title,
 );
 
+$breadcrumb-divider: quote(">");
+$breadcrumb-active-color: vars.$primary;
+$breadcrumb-font-size: 0.9rem;
+
 @import "bootstrap/scss/bootstrap";
